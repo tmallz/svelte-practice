@@ -1,16 +1,17 @@
-<nav class="bg-gray-500 shadow-lg">
+<nav class="bg-gray-500 shadow-lg rounded">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between">
             <div class="flex space-x-7">
                 <div>
                     <!-- Website Logo -->
                     <a href="#" class="flex items-center py-4 px-2">
+                        <img src="https://icons.iconarchive.com/icons/sonya/swarm/256/Beer-icon.png" alt="Logo" class="h-8 w-8 mr-2">
                         <span class="font-semibold text-white text-lg">Navigation</span>
                     </a>
                 </div>
                 <!-- Primary Navbar items -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold ">Home</a>
+                    <a href="" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Home</a>
                     <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Services</a>
                     <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">About</a>
                     <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact Us</a>
