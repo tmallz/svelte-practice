@@ -6,7 +6,6 @@ import Navbar from "./navbar.svelte";
 
 <main>
 	<Navbar/>
-  <Login/>
 </main>
 
 <style global lang="postcss">
