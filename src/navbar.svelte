@@ -1,26 +1,30 @@
+<script>
+    import { Link } from "svelte-navigator";
+</script>
+
 <nav class="bg-gray-500 shadow-lg rounded">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between">
             <div class="flex space-x-7">
                 <div>
                     <!-- Website Logo -->
-                    <a href="#" class="flex items-center py-4 px-2">
+                    <Link to="/" class="flex items-center py-4 px-2">
                         <img src="https://icons.iconarchive.com/icons/sonya/swarm/256/Beer-icon.png" alt="Logo" class="h-8 w-8 mr-2">
                         <span class="font-semibold text-white text-lg">Navigation</span>
-                    </a>
+                    </Link>
                 </div>
                 <!-- Primary Navbar items -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Home</a>
-                    <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Services</a>
-                    <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">About</a>
-                    <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact Us</a>
+                    <Link to="" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Home</Link>
+                    <Link to="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Services</Link>
+                    <Link to="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">About</Link>
+                    <Link to="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact Us</Link>
                 </div>
             </div>
             <!-- Secondary Navbar items -->
             <div class="hidden md:flex items-center space-x-3 ">
-                <a href="" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</a>
-                <a href="" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign Up</a>
+                <Link to="login" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</Link>
+                <Link to="signup" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign Up</Link>
             </div>
             <!-- Mobile menu button -->
             <div class="md:hidden flex items-center">
@@ -43,10 +47,10 @@
     <!-- mobile menu -->
     <div class="hidden mobile-menu">
         <ul class="">
-            <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white hover:bg-green-500 font-semibold">Home</a></li>
-            <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Services</a></li>
-            <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">About</a></li>
-            <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact Us</a></li>
+            <li class="active"><Link to="index.html" class="block text-sm px-2 py-4 text-white hover:bg-green-500 font-semibold">Home</Link></li>
+            <li><Link to="#services" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Services</Link></li>
+            <li><Link to="#about" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">About</Link></li>
+            <li><Link to="#contact" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact Us</Link></li>
         </ul>
     </div>
     <script>
