@@ -1,5 +1,5 @@
 <script>
-    import mapStyles from './map-styles'; // optional
+   // import mapStyles from './map-styles'; // optional
 
 
    let container;
@@ -13,16 +13,16 @@
        map = new google.maps.Map(container, {
            zoom,
            center,
-           styles: mapStyles // optional
+          // styles: mapStyles // optional
        });
    });
 </script>
 
 <style>
 .full-screen {
-   width: 100vw;
-   height: 100vh;
+   width: 50vw;
+   height: 50vh;
 }
 </style>
 
-<div class="full-screen" bind:this={container}></div>
+<div class="full-screen text-center py-5" bind:this={container}></div>
