@@ -10,7 +10,7 @@ import Homepage from "./homepage.svelte";
 <Router>
 
   <Navbar/>
-  <!-- <GoogleMap apiKey = 'AIzaSyBu1ca6yWC2AnUug-8ngPMGMiwVIwJ_gcQ'/> -->
+  <!-- <GoogleMap apiKey = ''/> -->
 
   <main>
 
