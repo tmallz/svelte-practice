@@ -1,21 +1,31 @@
 <script>
-import { Router, Route } from "svelte-navigator";
-import Login from "./login.svelte";
-import Navbar from "./navbar.svelte";
-import Signup from "./signup.svelte";
-import LandingPage from "./landingpage.svelte";
-import Homepage from "./homepage.svelte";
+  import { Router, Route } from "svelte-navigator";
+  import Login from "./login.svelte";
+  import Navbar from "./navbar.svelte";
+  import Signup from "./signup.svelte";
+  import LandingPage from "./landingpage.svelte";
+  import Homepage from "./homepage.svelte";
+	import Map from './Map.svelte';
+	export let ready;
 </script>
+
+<svelte:head>
+	<script defer async
+	src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+	</script>
+</svelte:head>
 
 <Router>
 
   <Navbar/>
-  <!-- <GoogleMap apiKey = ''/> -->
-
+  
   <main>
 
     <Route path = "/">
-      <LandingPage />
+      <!-- <LandingPage /> -->
+      { #if ready }
+      <Map></Map>
+      { /if }
     </Route>
 
     <Route path = "homepage">
@@ -38,4 +48,7 @@ import Homepage from "./homepage.svelte";
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+  :global(body) {
+	padding: 0;
+}
 </style>

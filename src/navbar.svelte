@@ -15,7 +15,7 @@
                 </div>
                 <!-- Primary Navbar items -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <Link to="" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Home</Link>
+                    <Link to="homepage" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Home</Link>
                     <Link to="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Services</Link>
                     <Link to="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">About</Link>
                     <Link to="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact Us</Link>
@@ -47,10 +47,12 @@
     <!-- mobile menu -->
     <div class="hidden mobile-menu">
         <ul class="">
-            <li class="active"><Link to="index.html" class="block text-sm px-2 py-4 text-white hover:bg-green-500 font-semibold">Home</Link></li>
+            <li class="active"><Link to="homepage" class="block text-sm px-2 py-4 text-white hover:bg-green-500 font-semibold">Home</Link></li>
             <li><Link to="#services" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Services</Link></li>
             <li><Link to="#about" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">About</Link></li>
             <li><Link to="#contact" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact Us</Link></li>
+            <li><Link to="login" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</Link></li>
+            <li><Link to="signup" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign Up</Link></li>
         </ul>
     </div>
     <script>
