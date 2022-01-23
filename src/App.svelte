@@ -12,7 +12,7 @@
 <svelte:head>
 	<script defer async
 	src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
-	</script>
+</script>
 </svelte:head>
 
 <Router>

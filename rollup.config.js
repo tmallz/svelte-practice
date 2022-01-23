@@ -7,6 +7,7 @@ import css from 'rollup-plugin-css-only';
 import sveltePreprocess from 'svelte-preprocess';
 import {config} from 'dotenv';
 import replace from '@rollup/plugin-replace';
+import includeEnv from "svelte-environment-variables";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -71,6 +72,10 @@ export default {
 		}),
 		commonjs(),
 
+		replace({
+			...includeEnv(),
+		}),
+
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
 		!production && serve(),
@@ -83,15 +88,6 @@ export default {
 		// instead of npm run dev), minify
 		production && terser(),
 
-		replace({
-			// stringify the object       
-			__myapp: JSON.stringify({
-			  env: {
-				isProd: production,
-				...config().parsed // attached the .env config
-			  }
-			}),
-		  }),
 	],
 	watch: {
 		clearScreen: false,

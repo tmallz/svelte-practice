@@ -4,7 +4,7 @@
 
    let container;
    let map;
-   let zoom = 8;
+   let zoom = 10;
    let center = {lat: 41.8781, lng:  -87.6298};
    
    import { onMount } from 'svelte';
