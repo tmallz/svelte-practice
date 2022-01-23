@@ -21,9 +21,9 @@
 <style>
 .full-screen {
     
-    width: 100vw;
-    height: 100vh;
+    width: 75vw;
+    height: 75vh;
 }
 </style>
 
-<div class="full-screen py-2 px-2" bind:this={container}></div>
+<div class="full-screen" bind:this={container}></div>

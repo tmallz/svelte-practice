@@ -1,5 +1,22 @@
 <script>
     import { Link } from "svelte-navigator";
+
+
+    let name;
+    let fetchedData = [];
+    
+    var handleButtonClick = (async () => {
+        await fetch(`https://api.openbrewerydb.org/breweries?by_city=${name}`)
+        .then((res) => { 
+            if (res.ok) {
+                res.json().then((data) => {
+                    console.log(data)
+                    fetchedData = data;
+                    return fetchedData;
+            })
+        }
+});
+})
 </script>
 
 <nav class="bg-gray-500 shadow-lg rounded">
@@ -79,3 +96,4 @@
         });
     </script>
 </nav>
+
