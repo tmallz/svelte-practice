@@ -27,11 +27,6 @@
 					<h3 class="font-black text-gray-800 md:text-3xl text-xl">{brewery.name}</h3>
 					<p class="md:text-lg text-gray-500 text-base">{brewery.street} {brewery.city}, {brewery.state}, {brewery.postal_code.split('-')[0]}</p>
 					<a href = "{brewery.website_url}" target ="_blank" class="md:text-lg text-gray-500 text-base">{brewery.website_url}</a>
-					<div class="flex border-2 border-gray-500 rounded">
-						<button class="px-4 text-white bg-gray-500 border-l " on:click={handleButtonClick}>
-							Save to Favorits
-						</button>
-					</div>
 				</div>
 			</div>
 		</div>
