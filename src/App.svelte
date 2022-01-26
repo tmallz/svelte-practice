@@ -7,9 +7,7 @@
   import Homepage from "./homepage.svelte";
 	import Map from './Map.svelte';
 	export let ready;
-
   let name;
-  var handleButtonClick;
 </script>
 
 <svelte:head>

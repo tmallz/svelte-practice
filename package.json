@@ -5,9 +5,11 @@
 	"scripts": {
 		"build": "rollup -c",
 		"dev": "rollup -c -w",
+		"dev2": "nodemon server.js",
 		"start": "sirv public --no-clear",
 		"start2": "node server.js",
-		"env:dev": "env-cmd npm run dev"
+		"env:dev": "env-cmd npm run dev",
+		"seed": "node seeds/seeds.js"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^17.0.0",
@@ -27,6 +29,7 @@
 		"bcrypt": "^5.0.1",
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
+		"express-session": "^1.17.2",
 		"mysql": "^2.18.1",
 		"mysql2": "^2.3.3-rc.0",
 		"path": "^0.12.7",
@@ -36,6 +39,7 @@
 		"sirv-cli": "^1.0.0",
 		"svelte-environment-variables": "^1.0.4",
 		"svelte-navigator": "^3.1.5",
-		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+		"vite": "^2.7.13"
 	}
 }
