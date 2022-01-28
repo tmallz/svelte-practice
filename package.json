@@ -6,8 +6,7 @@
 		"build": "rollup -c",
 		"dev": "rollup -c -w",
 		"dev2": "nodemon server.js",
-		"start": "sirv public --no-clear",
-		"start2": "node server.js",
+		"start": "node server.js",
 		"env:dev": "env-cmd npm run dev",
 		"seed": "node seeds/seeds.js"
 	},
@@ -43,3 +42,4 @@
 		"vite": "^2.7.13"
 	}
 }
+

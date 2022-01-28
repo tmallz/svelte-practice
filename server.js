@@ -6,7 +6,7 @@ const sequelize = require('./config/connection');
 const session = require('express-session');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.use(cors());
 
 const sess = {
@@ -22,6 +22,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
+app.get('*', (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+ });
+
 sequelize.sync({ force: false }).then(() => {
-	app.listen(PORT, () => console.log('Now listening'));
+	app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
 });

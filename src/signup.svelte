@@ -33,25 +33,27 @@
 
     const signUpFormHandler =  async () => {
 
-
         if(signUpPassword !== signUpConfirmPassword) {
             alert("Passwords do not match");
+            return;
         }
 
         const email = signUpEmail;
         const password = signUpPassword;
 
         if (email && password) {
-        const response = await fetch('/api/users/signUp', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-        headers: { 'Content-Type': 'application/json' },
+            console.log(email, password);
+            console.log("making signUp call");
+            const response = await fetch('/api/users/signUp', {
+                method: 'POST',
+                body: JSON.stringify({ email, password }),
+                headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-        document.location.replace('/');
+            router.push('/');
         } else {
-        alert(response.statusText);
+            alert(response.statusText);
         }
     }
 }
