@@ -33,7 +33,7 @@
                 <!-- Primary Navbar items -->
                 <div class="hidden md:flex items-center space-x-1">
                     <Link to="homepage" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Home</Link>
-                    <Link to="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Services</Link>
+                    <Link to="Favorites" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Favorite</Link>
                     <Link to="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">About</Link>
                     <Link to="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact Us</Link>
                 </div>
@@ -75,12 +75,15 @@
             </button>
             </div>
         </div>
+        {#if session.logged_in }
+        <div>{sessionStorage.userName}</div>
+        {/if}
     </div>
     <!-- mobile menu -->
     <div class="hidden mobile-menu">
         <ul class="">
             <li class="active"><Link to="homepage" class="block text-sm px-2 py-4 text-white hover:bg-green-500 font-semibold">Home</Link></li>
-            <li><Link to="#services" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Services</Link></li>
+            <li><Link to="favorites" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Favorites</Link></li>
             <li><Link to="#about" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">About</Link></li>
             <li><Link to="#contact" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact Us</Link></li>
             <li><Link to="login" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Log In</Link></li>

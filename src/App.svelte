@@ -6,6 +6,7 @@
   import LandingPage from "./pages/landingpage.svelte";
   import Homepage from "./pages/homepage.svelte";
 	import Map from './components/Map.svelte';
+  import Favorites from "./pages/favorites.svelte";
 	export let ready;
   let name;
 </script>
@@ -48,6 +49,10 @@
 
     <Route path = "signup">
       <Signup />
+    </Route>
+
+    <Route path = "Favorites">
+      <Favorites />
     </Route>
 
   </main>

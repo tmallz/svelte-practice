@@ -3,7 +3,6 @@ const { User } = require('../../models');
 
 router.post('/login', async (req, res) => {
 	const userData = await User.findOne({ where : { email: req.body.email }});
-	console.log(userData);
 	if (!userData) {
 		return res.status(404).json({ message: 'Invalid Credentials' });
 	}
@@ -31,6 +30,7 @@ router.post('/signUp', async (req, res) => {
 
 		req.session.save(() => {
 			req.session.userId = userData.id;
+			req.session.userName = userData.name;
 			req.session.logged_in = true;
 
 			res.json({ User: userData, message: 'User created successfully' });
@@ -40,5 +40,15 @@ router.post('/signUp', async (req, res) => {
 		res.status(400).json(err);
 	}
 });
+
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
 
 module.exports = router;
