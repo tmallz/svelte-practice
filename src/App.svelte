@@ -1,11 +1,11 @@
 <script>
   import { Router, Route } from "svelte-navigator";
-  import Login from "./login.svelte";
-  import Navbar from "./navbar.svelte";
-  import Signup from "./signup.svelte";
-  import LandingPage from "./landingpage.svelte";
-  import Homepage from "./homepage.svelte";
-	import Map from './Map.svelte';
+  import Login from "./pages/login.svelte";
+  import Navbar from "./components/navbar.svelte";
+  import Signup from "./pages/signup.svelte";
+  import LandingPage from "./pages/landingpage.svelte";
+  import Homepage from "./pages/homepage.svelte";
+	import Map from './components/Map.svelte';
 	export let ready;
   let name;
 </script>

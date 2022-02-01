@@ -27,6 +27,8 @@
 </div>
 
 <script>
+    //import router from 'svelte-router';
+
     let signUpEmail; 
     let signUpPassword; 
     let signUpConfirmPassword;
@@ -51,7 +53,8 @@
         });
 
         if (response.ok) {
-            router.push('/');
+            //router.push('/');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }

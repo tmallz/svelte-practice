@@ -44,7 +44,7 @@
             const data = await response.json();
 
             if(data.success) {
-                router.push('/');
+            document.location.replace('/');
             } else {
                 alert(data.message);
             }
