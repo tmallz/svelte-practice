@@ -19,7 +19,7 @@
                                 class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                 </div>
                 <div class="flex items-baseline justify-between">
-                    <button class="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900" on:click={signUpFormHandler}>Sign Up</button>
+                    <button class="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900" on:click|preventDefault={signUpFormHandler}>Sign Up</button>
                 </div>
             </div>
         </form>
@@ -43,7 +43,7 @@
 
         if (email && password) {
             console.log(email, password);
-            console.log("making signUp call");
+            console.log("making signUp call"); 
             const response = await fetch('/api/users/signUp', {
                 method: 'POST',
                 body: JSON.stringify({ email, password }),
