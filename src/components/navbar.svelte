@@ -56,7 +56,7 @@
             <!-- Secondary Navbar items -->
             <div class="hidden md:flex items-center space-x-3 ">
                 <Link to="login" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</Link>
-                <Link to="signup" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign Up</Link>
+                <Link to="signup" class="py-2 px-2 font-medium text-white rounded hover:bg-green-500 hover:text-white transition duration-300">Sign Up</Link>
             </div>
             <!-- Mobile menu button -->
             <div class="md:hidden flex items-center">
@@ -75,9 +75,6 @@
             </button>
             </div>
         </div>
-        {#if session.logged_in }
-        <div>{sessionStorage.userName}</div>
-        {/if}
     </div>
     <!-- mobile menu -->
     <div class="hidden mobile-menu">

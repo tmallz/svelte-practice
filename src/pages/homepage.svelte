@@ -53,9 +53,6 @@ var handleButtonClick =(async () => {
 			res.json().then((data) => {
 				console.log(data)
 				fetchedData = data;
-				// breweryName= data[0].name;
-				// breweryAddress = data[0].street + ' ' + data[0].city + ', ' + data[0].state + ', ' + data[0].postal_code.split('-')[0];
-				// breweryWebsite = data[0].website_url;
 				return fetchedData;
 		})
 	}
