@@ -1,22 +1,18 @@
 <script>
     import { Link } from "svelte-navigator";
-
-
-    let name;
-    let fetchedData = [];
     
-    var handleButtonClick = (async () => {
-        await fetch(`https://api.openbrewerydb.org/breweries?by_city=${name}`)
-        .then((res) => { 
-            if (res.ok) {
-                res.json().then((data) => {
-                    console.log(data)
-                    fetchedData = data;
-                    return fetchedData;
-            })
+    var handleLogoutButtonClick = async () => {
+    const response = await fetch('/api/users/logout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        });
+    
+        if (response.ok) {
+        document.location.replace('/login');
+        } else {
+        alert(response.statusText);
         }
-});
-})
+    }
 </script>
 
 <nav class="bg-gray-500 shadow-lg rounded">
@@ -33,9 +29,9 @@
                 <!-- Primary Navbar items -->
                 <div class="hidden md:flex items-center space-x-1">
                     <Link to="homepage" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Home</Link>
-                    <Link to="Favorites" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Favorite</Link>
-                    <Link to="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">About</Link>
-                    <Link to="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact Us</Link>
+                    <Link to="Favorites" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Favorite</Link>
+                    <Link to="" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">About</Link>
+                    <Link to="" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Contact Us</Link>
                 </div>
             </div>
             <div class="relative mx-auto text-gray-600 lg:block hidden py-4">
@@ -57,6 +53,7 @@
             <div class="hidden md:flex items-center space-x-3 ">
                 <Link to="login" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</Link>
                 <Link to="signup" class="py-2 px-2 font-medium text-white rounded hover:bg-green-500 hover:text-white transition duration-300">Sign Up</Link>
+                <button class="py-2 px-2 font-medium text-white rounded hover:bg-green-500 hover:text-white transition duration-300" on:click={handleLogoutButtonClick}>Log Out</button>
             </div>
             <!-- Mobile menu button -->
             <div class="md:hidden flex items-center">
@@ -85,6 +82,7 @@
             <li><Link to="#contact" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact Us</Link></li>
             <li><Link to="login" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Log In</Link></li>
             <li><Link to="signup" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Sign Up</Link></li>
+            <li> <button class="py-2 px-2 font-medium border-none text-white rounded hover:bg-green-500 hover:text-white transition duration-300" on:click={handleLogoutButtonClick}>Log Out</button></li>
         </ul>
     </div>
     <script>

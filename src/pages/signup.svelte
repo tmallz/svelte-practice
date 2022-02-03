@@ -27,7 +27,6 @@
 </div>
 
 <script>
-    //import router from 'svelte-router';
 
     let signUpEmail; 
     let signUpPassword; 
@@ -45,7 +44,6 @@
 
         if (email && password) {
             console.log(email, password);
-            console.log("making signUp call"); 
             const response = await fetch('/api/users/signUp', {
                 method: 'POST',
                 body: JSON.stringify({ email, password }),
