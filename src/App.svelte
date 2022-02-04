@@ -51,7 +51,7 @@
       <Signup />
     </Route>
 
-    <Route path = "Favorites">
+    <Route path = "favorites">
       <Favorites />
     </Route>
 

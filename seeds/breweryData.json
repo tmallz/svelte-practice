@@ -1,0 +1,17 @@
+[
+    {
+        "name": "My test Brewery",
+        "address": "123 Main St, City, State 12345",
+        "website": "WEBSITE_GOES_HERE"
+    },
+    {
+        "name": "Maplewood Brewery and Distillery",
+        "address": "2717 N Maplewood Ave, Chicago, IL 60647",
+        "website": "https://maplewoodbrew.com/"
+    },
+    {
+        "name": "Mr. Clarks Castle",
+        "address": "123 Clark St, Dogville, St 12345",
+        "website": "CLARK IS BETTER THAN WINTSON DOT COM"
+    }
+]

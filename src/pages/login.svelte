@@ -41,12 +41,11 @@
                 })
             });
 
-            const data = await response.json();
 
-            if(data.success) {
-            document.location.replace('/');
+            if(response.ok) {
+                document.location.replace('/');
             } else {
-                alert(data.message);
+                alert(response.statusText);
             }
         } else {
             alert('Please enter a valid email and password');

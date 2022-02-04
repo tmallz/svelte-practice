@@ -29,7 +29,7 @@
                 <!-- Primary Navbar items -->
                 <div class="hidden md:flex items-center space-x-1">
                     <Link to="homepage" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Home</Link>
-                    <Link to="Favorites" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Favorite</Link>
+                    <Link to="favorites" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Favorite</Link>
                     <Link to="" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">About</Link>
                     <Link to="" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Contact Us</Link>
                 </div>

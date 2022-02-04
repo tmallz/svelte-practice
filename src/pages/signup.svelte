@@ -57,6 +57,8 @@
             alert(response.statusText);
         }
     }
+
+    const favoriteHandler = async () =>{}
 }
 
 
