@@ -2,23 +2,20 @@ const router = require('express').Router();
 const { Favorites } = require('../../models');
 const withAuth = require('../../utils/withAuth')
 
-router.get('/test', withAuth, async (req, res) => {
+router.post('/add', withAuth, async (req, res) => {
     console.log('hit the favorites route with auth');
     try{
-        console.log(req.session.logged_in, req.session.user_id);
+        const favoriteData = await Favorites.create({
+            name: req.body.breweryName,
+            address: req.body.breweryAddress,
+            website: req.body.breweryWebsite,
+            user_id: req.session.user_id,
+        });
+
+        res.json({ favorite: favoriteData, message: 'Favorite added successfully' });
     }catch(err){
-        res.status(400).json(err, {message: 'the route is still not wokring'});
+        res.status(400).json(err);
     }
-    // try {
-    //     const favorites = await Favorites.findAll({
-    //     where: {
-    //         userId: req.session.user_id
-    //     }
-    //     });
-    //     res.json(favorites);
-    // } catch (err) {
-    //     res.status(400).json(err);
-    // }
 });
 
 module.exports = router;

@@ -27,7 +27,7 @@
 				</div>
 				<div class="w-full md:w-1/3 bg-white grid place-items-center">
 					<!-- <img src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="tailwind logo" class="rounded-xl" /> -->
-					<button>Save to favorites</button>
+					<button on:click={handleSaveToFavorites}>Save to favorites</button>
 				</div>
 			</div>
 		</div>
@@ -55,6 +55,18 @@ var handleButtonClick =(async () => {
 	}
 });
 })
+
+var handleSaveToFavorites = async () => {
+	let breweryName = brewery.name;
+	let breweryAddress = brewery.street + ' ' + brewery.city + ' ' + brewery.state + ' ' + brewery.postal_code.split('-')[0];
+	let breweryWebsite = brewery.website_url;
+
+	const response = await fetch('/api/favorites/add', {
+                method: 'POST',
+                body: JSON.stringify({ breweryName, breweryAddress, breweryWebsite }),
+                headers: { 'Content-Type': 'application/json' },
+        });
+}
 
 onMount(handleButtonClick)
 </script>
