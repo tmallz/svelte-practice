@@ -53,9 +53,6 @@ var handleButtonClick = async () => {
 		if (res.ok) {
 			res.json().then((data) => {
 				fetchedData = data;
-				myDict = arrayToDict(data);
-				newArray = Object.values(myDict);
-				console.log(newArray);
 				return fetchedData;
 		})
 	}
