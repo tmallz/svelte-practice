@@ -1,8 +1,27 @@
 const router = require('express').Router();
-const { Favorites } = require('../../models');
+const { Favorites, User } = require('../../models');
 const withAuth = require('../../utils/withAuth');
 
-router.post('/', async (req, res) => {
+router.get('/', async (req, res) => {
+  try {
+    Favorites.findAll({
+      include: [User],
+      where: {
+        user_id: req.session.user_id,
+      },
+    }).then((userFavorites) => {
+      const favorites = userFavorites.map((favorite) =>
+        favorite.get({ plain: true })
+      );
+      console.log(user_id);
+      res.json(favorites);
+    });
+  } catch {
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+router.post('/add', async (req, res) => {
   console.log('hit the favorites route with auth');
   try {
     const favoriteData = await Favorites.create({
@@ -19,11 +38,6 @@ router.post('/', async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
-  //   console.log(
-  //     req.body.breweryName,
-  //     req.body.breweryAddress,
-  //     req.body.breweryWebsite
-  //   );
 });
 
 module.exports = router;
